@@ -51,7 +51,7 @@ export class Client extends StoatClient {
   public async loadCommands(path: string) {
     await this.loadCommandsFrom(path, []);
     logger.info(`Loaded ${this.commands.size} commands.`);
-    logger.info(`Commands: ${Array.from(new Set(this.commands.keys())).join("\n- ")}`);
+    logger.info(`Commands: ${Array.from(new Set(this.commands.keys())).join(", ")}`);
   }
 
   public async loadEvents(path: string) {
