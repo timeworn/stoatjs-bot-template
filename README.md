@@ -1,15 +1,51 @@
 # stoatjs-bot-template
 
-To install dependencies:
+A template for building a Stoat bot using StoatJS. This template is written in TypeScript. Read the docs to get started with this bot.
+
+## Features
+
+- Command handling
+- Event handling
+- Easy to extend and customize
+- Command cooldowns
+
+## Prerequisites
+
+- [Git](https://git-scm.com/install/)
+- [Node.js](https://nodejs.org/en/download) (version 16 or higher)
+- A code editor (e.g., [Visual Studio Code](https://code.visualstudio.com/download))
+
+## Getting Started
+
+1. Clone the repository:
 
 ```bash
-bun install
+git clone https://github.com/timeworn/stoatjs-bot-template
 ```
 
-To run:
+2. Navigate to the project directory:
 
 ```bash
-bun run index.ts
+cd stoatjs-bot-template
 ```
 
-This project was created using `bun init` in bun v1.3.9. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+3. Install dependencies:
+
+```bash
+npm install
+# bun install
+# pnpm install
+```
+
+4. Rename the `.env.example` file to `.env` and fill in your bot token and other necessary information.
+
+> [!CAUTION]
+> Never share your bot token with anyone or `.env`. A `.env` file is used for storing sensitive information.
+
+5. Start the bot in development mode:
+
+```bash
+npm run dev
+# bun dev
+# pnpm dev
+```

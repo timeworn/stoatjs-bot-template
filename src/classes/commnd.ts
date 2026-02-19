@@ -14,22 +14,20 @@ export type CommandUsedIn = "guild" | "dm" | "both";
 
 export interface ICommand {
   name: string;
-  description: string | string[];
+  description?: string;
   aliases?: string[];
   cooldown?: number;
   permission: PermissionLevel;
-  category?: string;
   usedIn?: CommandUsedIn;
   execute: (client: Client, message: Message) => Promise<any> | any;
 }
 
 export class Command implements ICommand {
   public readonly name: string;
-  public readonly description: string | string[];
+  public readonly description?: string;
   public readonly aliases?: string[];
   public readonly cooldown?: number;
   public readonly permission: PermissionLevel;
-  public readonly category?: string;
   public readonly usedIn: CommandUsedIn;
   private executeCommand;
 
@@ -39,7 +37,6 @@ export class Command implements ICommand {
     this.aliases = options.aliases;
     this.cooldown = options.cooldown;
     this.permission = options.permission;
-    this.category = options.category;
     this.usedIn = options.usedIn || "guild";
     this.executeCommand = options.execute;
   }
