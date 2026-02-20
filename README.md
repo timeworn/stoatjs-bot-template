@@ -1,6 +1,6 @@
 # stoatjs-bot-template
 
-A template for building a Stoat bot using StoatJS. This template is written in TypeScript. Read the docs to get started with this bot.
+A template for building a Stoat bot using StoatJS. This template is written in TypeScript.
 
 ## Features
 
