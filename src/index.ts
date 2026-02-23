@@ -14,4 +14,4 @@ const eventFolderPath = join(__dirname, "events");
 client.loadCommands(commandFolderPath);
 client.loadEvents(eventFolderPath);
 
-client.loginBot(process.env.TOKEN!);
+client.loginBot(process.env["TOKEN"]!);

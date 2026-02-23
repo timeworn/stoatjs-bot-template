@@ -6,14 +6,14 @@ export default new Command({
   name: "ping",
   description: "Pong! Replies with bot latency.",
   permission: PermissionLevel.User,
-  execute: async (_client, interaction) => {
+  execute: async (_client, message) => {
     const embed = new Embed({
       description: "Pinging...",
     });
 
-    const sent = await interaction.reply({ embeds: [embed] });
+    const sent = await message.reply({ embeds: [embed] });
     const createdTimestamp = sent?.createdAt.getTime();
-    const latency = createdTimestamp ? createdTimestamp - interaction.createdAt.getTime() : -1;
+    const latency = createdTimestamp ? createdTimestamp - message.createdAt.getTime() : -1;
     const latencyEmbed = new Embed({
       description: `Pong! ${highlight(`${latency}ms`)}`,
     });

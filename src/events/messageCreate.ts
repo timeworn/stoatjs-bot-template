@@ -6,7 +6,7 @@ export default new Event({
   execute(client, message) {
     if (message.author?.bot) return;
 
-    const prefix = process.env.PREFIX || "!";
+    const prefix = process.env["PREFIX"] || "!";
     const content = message.content || "";
     if (!content.startsWith(prefix)) return;
 

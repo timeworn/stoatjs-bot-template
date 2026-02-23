@@ -15,28 +15,31 @@ export interface ICommand {
   description?: string;
   aliases?: string[];
   cooldown?: number;
-  permission: PermissionLevel;
-  execute: (client: Client, message: Message) => Promise<any> | any;
+  permission?: PermissionLevel;
+  execute?: (client: Client, message: Message) => Promise<any> | any;
 }
 
 export class Command implements ICommand {
   public readonly name: string;
   public readonly description?: string;
   public readonly aliases?: string[];
-  public readonly cooldown?: number;
-  public readonly permission: PermissionLevel;
-  private executeCommand;
+  public cooldown?: number;
+  public permission: PermissionLevel;
+  public readonly executeCommand;
+  public readonly wasPermSet: boolean;
 
   constructor(options: ICommand) {
     this.name = options.name;
     this.description = options.description;
     this.aliases = options.aliases;
     this.cooldown = options.cooldown;
-    this.permission = options.permission;
+    this.permission = options.permission ?? PermissionLevel.User;
+    this.wasPermSet = options.permission !== undefined;
     this.executeCommand = options.execute;
   }
 
   public execute(client: Client, message: Message): Promise<void> | void {
+    if (!this.executeCommand) return;
     if (!message.authorId) return;
     if (!message.server) return;
 
