@@ -1,13 +1,6 @@
 # stoatjs-bot-template
 
-A template for building a Stoat bot using StoatJS. This template is written in TypeScript.
-
-## Features
-
-- Command handling
-- Event handling
-- Easy to extend and customize
-- Command cooldowns
+A template for building a Stoat bot using StoatJS. This template is written in TypeScript. Read more [here](https://docs.timeworn.net/)
 
 ## Prerequisites
 
@@ -38,9 +31,6 @@ npm install
 ```
 
 4. Rename the `.env.example` file to `.env` and fill in your bot token and other necessary information.
-
-> [!CAUTION]
-> Never share your bot token with anyone or `.env`. A `.env` file is used for storing sensitive information.
 
 5. Start the bot in development mode:
 
