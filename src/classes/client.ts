@@ -63,7 +63,8 @@ export class Client extends StoatClient {
       const { default: command } = await import(pathToFileURL(indexPath).href);
 
       if (command instanceof Command) {
-        const commandName = command.name.length === 0 ? group.join(" ") : [...group, command.name].join(" ");
+        // const commandName = command.name.length === 0 ? group.join(" ") : [...group, command.name].join(" ");
+        const commandName = group.join(" ");
 
         if (command.executeCommand) {
           this.registerCommand(command, commandName, parentConfig);
